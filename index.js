@@ -27,7 +27,7 @@ if (req.body.events[0].type === "message") {
         },
         {
           "type": "text",
-          "text": "May I help you?"
+          "text": "May I help youuuuuuuu?"
         }
       ]
     })
