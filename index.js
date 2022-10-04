@@ -36,10 +36,10 @@ app.post("/webhook", function (req, res) {
           type: "text",
           text: "May I help youuuuuuuu?",
         },
-        {
+        /*{
           type: "text",
           text: req.event.source.userId,
-        },
+        },*/
       ],
     });
 
