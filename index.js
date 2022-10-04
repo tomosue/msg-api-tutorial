@@ -11,12 +11,17 @@ app.use(express.urlencoded({
 
 app.get("/", (req, res) => {
     res.sendStatus(200)
+    
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + TOKEN
+    }
 })
 
 app.post("/webhook", function(req, res) {
-res.send("HTTP POST request sent to the webhook URL!")
-// ユーザーがボットにメッセージを送った場合、返信メッセージを送る
-if (req.body.events[0].type === "message") {
+  res.send("HTTP POST request sent to the webhook URL!")
+  // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
+  if (req.body.events[0].type === "message") {
     // 文字列化したメッセージデータ
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
@@ -28,6 +33,10 @@ if (req.body.events[0].type === "message") {
         {
           "type": "text",
           "text": "May I help youuuuuuuu?"
+        },
+        {
+          "type": "text",
+          "text": event.source.userId,
         }
       ]
     })
