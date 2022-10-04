@@ -36,7 +36,7 @@ app.post("/webhook", function(req, res) {
         },
         {
           "type": "text",
-          "text": event.source.userId,
+          "text": event.source.userId
         }
       ]
     })
