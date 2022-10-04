@@ -12,10 +12,10 @@ app.use(express.urlencoded({
 app.get("/", (req, res) => {
     res.sendStatus(200)
     
-    const headers = {
+    /*const headers = {
       "Content-Type": "application/json",
       "Authorization": "Bearer " + TOKEN
-    }
+    }*/
 })
 
 app.post("/webhook", function(req, res) {
@@ -34,10 +34,10 @@ app.post("/webhook", function(req, res) {
           "type": "text",
           "text": "May I help youuuuuuuu?"
         },
-        {
+        /*{
           "type": "text",
           "text": event.source.userId,
-        }
+        }*/
       ]
     })
 
